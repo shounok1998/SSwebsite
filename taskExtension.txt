@@ -1,0 +1,27 @@
+$(function(){
+	$("label[name='userName']").text("Welcome to Shounok's World");
+	var myDate = new Date(); 
+	var myMsg="";
+	if ( myDate.getHours() < 12 ) { 
+		    myMsg="Good Morning!";
+	} else if (myDate.getHours() >= 12 && myDate.getHours() <= 17 ) { 
+		    myMsg="Good Afternoon!"; 
+	} else if (myDate.getHours() > 17 && myDate.getHours() <= 20 ) { 
+		    myMsg="Good Evening!"; 
+	} else { 
+		    myMsg="Good Night!"; 
+	}
+	$("label[name='welcomeMsg']").text(myMsg);
+    $('button[name="showHideBtn"]').click(function(){
+		var btn = $(this);
+		var btnTxt = btn.text().trim();		
+		if(btnTxt==="Show"){
+			$("label[name='welcomeMsg']").show(200);
+			btn.text("Hide");
+		}else{
+			$("label[name='welcomeMsg']").hide(200);
+			btn.text("Show");
+		}        
+    });   
+
+});
